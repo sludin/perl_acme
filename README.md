@@ -2,9 +2,19 @@
 
 See client.pl for an example of using the library.
 
-Usage:
+# Status
 
-In order to use the library and teh Let's Encrypt service in general you will need to generate a couple of files.  These are:
+This module is very rough right now.  The goal is to get feedback on key items such as:
+
+* Naming
+* Challenge handling
+* Exception handling 
+
+# Usage
+
+## Requisite file creation
+
+In order to use the library and the Let's Encrypt service in general you will need to generate a couple of files.  These are:
 
 * A private account key 
 * A private cetificate key
@@ -38,5 +48,13 @@ There are numerous ways to go about this.  Below are some command line recipies 
   This will create a cert with three domains.  domain.example.com will be in the subject and
   domain1.example.com and domain2.example.com will be in the SAN extension.
 
- 
+# API Usage
+
+The goal of this module is to take away much of the need to understand the details of the Let's Encrypt ACME api.  That said, having a rough understanding of the flow will be usefil.  client.pl was writted and commented in a way to document the API and the manner in which to use the module.
+
+## Challenges
+
+The goal of the challenges code is to make it as flexible as possible by having the user provide a closure / function reference that is passed the the ACME module.  Each identifier will need its own challenge fullfillment code.
+
+TODO: Make this multiple modules that take care of different use cases such as dropping files locally, copying via SSH, pusting to github, etc.  FLexibility is the goal.
 
