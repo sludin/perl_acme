@@ -3,9 +3,13 @@
 See client.pl for an example of using the library.
 
 Usage:
+
  Generate a new private key for the Let's Encrypt account. For example:
+ 
    `$ openssl genrsa -out account_key.pem 2048`
+   
  Generate a new private key for the certificate. For example:
+ 
    `$ openssl genrsa -out cert_key.pem 2048`
 
  Generate a certificate signing request (CSR).  For example (for a single domain cert):
